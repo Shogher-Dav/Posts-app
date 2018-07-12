@@ -22,12 +22,7 @@ export class PostsComponent implements OnInit {
   }
   public openModal(post) {
     const initialState = {
-      list: [
-        'Open a modal with component',
-        'Pass your data',
-        'Do something else',
-        '...'
-      ],
+      list: [],
       title: 'Modal with component'
     };
     this.bsModalRef = this.modalService.show(UpdateFormComponent, {initialState: {

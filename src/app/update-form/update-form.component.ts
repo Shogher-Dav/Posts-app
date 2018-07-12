@@ -5,6 +5,7 @@ import {Store, Select} from '@ngxs/store';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { IPost} from '../core/interfaces/IPost';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import {UpdatePost} from '../post.actions';
 
 
 @Component({
@@ -18,11 +19,7 @@ export class UpdateFormComponent implements OnInit {
   public posts: IPost[] = this.store.selectSnapshot(PostState.posts);
   postForm: FormGroup;
 
-  constructor(private store: Store, private fb: FormBuilder, public bsModalRef: BsModalRef) {
-    this.posts$.subscribe((post) => {
-        this.posts = post;
-    });
-  }
+  constructor(private store: Store, private fb: FormBuilder, public bsModalRef: BsModalRef) {}
 
   ngOnInit() {
     this.postForm = this.fb.group({
@@ -31,7 +28,7 @@ export class UpdateFormComponent implements OnInit {
     });
   }
 
-  update() {
-    console.log(this.posts);
+  update(post) {
+    this.store.dispatch(new UpdatePost(post));
   }
 }

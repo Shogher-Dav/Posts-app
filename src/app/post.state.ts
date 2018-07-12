@@ -35,10 +35,6 @@ export class PostState {
           draftState.posts.push(post);
         })
       );
-    // const state = getState();
-    // patchState({
-    //   posts: [...state.posts, post]
-    // });
 
     }
     @Action(UpdatePost)
@@ -54,7 +50,6 @@ export class PostState {
       ctx.setState(
         produce(ctx.getState(), draft => {
            draft.posts.splice(post, 1);
-          //draft.posts.filter(item => item !== post);
         })
       );
 

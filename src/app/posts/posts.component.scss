@@ -17,6 +17,8 @@
   p {
     margin: 0 20px;
     cursor: pointer;
+    word-wrap: break-word;
+    width: 50px;
   }
   .actions {
     display: flex;

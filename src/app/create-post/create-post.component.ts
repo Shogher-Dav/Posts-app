@@ -14,8 +14,8 @@ export class CreatePostComponent implements OnInit {
 
   constructor( private store: Store, private fb: FormBuilder) {
     this.postForm = this.fb.group({
-      title: ['', [Validators.required , Validators.minLength(3)]],
-      body: ['', [Validators.required, Validators.minLength(3)] ]
+      title: ['', [Validators.required ]],
+      body: ['', [Validators.required] ]
     });
   }
   ngOnInit() {
