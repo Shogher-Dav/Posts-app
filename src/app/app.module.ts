@@ -12,6 +12,9 @@ import { PostsComponent } from './posts/posts.component';
 import { UpdatePostModalComponent } from './update-post-modal/update-post-modal.component';
 import { ModalService } from './update-post-modal/modal.service';
 import { UpdateFormComponent } from './update-form/update-form.component';
+import { ModalModule } from 'ngx-bootstrap';
+import {BsModalRef} from 'ngx-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -29,8 +32,10 @@ import { UpdateFormComponent } from './update-form/update-form.component';
     NgxsLoggerPluginModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
+    ModalModule.forRoot()
   ],
-  providers: [ModalService],
-  bootstrap: [AppComponent]
+  providers: [ModalService, BsModalRef],
+  bootstrap: [AppComponent],
+  entryComponents: [UpdateFormComponent]
 })
 export class AppModule { }

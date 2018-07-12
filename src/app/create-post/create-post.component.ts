@@ -14,15 +14,18 @@ export class CreatePostComponent implements OnInit {
 
   constructor( private store: Store, private fb: FormBuilder) {
     this.postForm = this.fb.group({
-      title: ['', Validators.required ],
-      body: ['', Validators.required ]
+      title: ['', [Validators.required , Validators.minLength(3)]],
+      body: ['', [Validators.required, Validators.minLength(3)] ]
     });
   }
   ngOnInit() {
   }
   createPost() {
-    this.store.dispatch(new CreatePost(this.postForm.getRawValue()));
-    this.postForm.reset();
+    if ( this.postForm.valid ) {
+      this.store.dispatch(new CreatePost(this.postForm.getRawValue()));
+      this.postForm.reset();
+     // alert('Sucsessfully created');
+    }
   }
 
 }

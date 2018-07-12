@@ -4,14 +4,22 @@
     <div class="form-group">
       <label for="">Title</label>
       <input class="form-control"type="text" formControlName="title">
+      <div *ngIf="postForm.controls['title'].hasError('required') && postForm.controls['title'].touched " class="alert alert-danger" role="alert">
+         Please enter a title
+      </div>
     </div>
     <div>
       <label for="">Body</label>
       <textarea  class="form-control" name="" id="" cols="30" rows="5" formControlName="body"></textarea>
     </div>
-    <button class="btn btn-success save-post-btn"  (click)="createPost()" >Save Posts</button>
+    <div *ngIf="postForm.controls['body'].hasError('required')  && postForm.controls['body'].touched " class="alert alert-danger" role="alert">
+      Please enter a text
+    </div>
+    <button [disabled]="!postForm.valid" class="btn btn-success save-post-btn"  (click)="createPost()">
+      Save Posts
+    </button>
   </form>
-</div>
 
+</div>
 
 

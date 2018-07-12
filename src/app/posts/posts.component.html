@@ -6,11 +6,10 @@
   </div>
 
   <div *ngFor="let post of posts$ | async" class="posts-items">
-    <!--<p>{{ post.id }}</p>-->
     <p>{{ post.title }}</p>
     <p>{{ post.body }}</p>
     <div class=" actions">
-      <p (click)="openModal()">Edit</p>
+      <p (click)="openModal(post)">Edit</p>
       <p (click)="delete(post)">Delete</p>
     </div>
 

@@ -1,9 +1,13 @@
-<div>
-  <form class="update-form">
-    <label >Title</label>
-    <input type="text" class="form-control">
-    <label>Body</label>
-    <input type="text" class="form-control">
-    <button class="btn btn-success update-post-btn" >Update</button>
-  </form>
-</div>
+  <div>
+    <button (click)="bsModalRef.hide()" type="button" class="close" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <form class="update-form" [formGroup]="postForm">
+      <label >Title</label>
+      <input type="text" class="form-control" formControlName="title">
+      <label>Body</label>
+      <input type="text" class="form-control" formControlName="body">
+      <button class="btn btn-success update-post-btn" (click)="update()">Update</button>
+    </form>
+  </div>
+
