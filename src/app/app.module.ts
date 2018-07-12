@@ -9,8 +9,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { PostsComponent } from './posts/posts.component';
-import { UpdatePostModalComponent } from './update-post-modal/update-post-modal.component';
-import { ModalService } from './update-post-modal/modal.service';
 import { UpdateFormComponent } from './update-form/update-form.component';
 import { ModalModule } from 'ngx-bootstrap';
 import {BsModalRef} from 'ngx-bootstrap';
@@ -21,7 +19,6 @@ import {BsModalRef} from 'ngx-bootstrap';
     AppComponent,
     CreatePostComponent,
     PostsComponent,
-    UpdatePostModalComponent,
     UpdateFormComponent
   ],
   imports: [
@@ -34,7 +31,7 @@ import {BsModalRef} from 'ngx-bootstrap';
     ReactiveFormsModule,
     ModalModule.forRoot()
   ],
-  providers: [ModalService, BsModalRef],
+  providers: [ BsModalRef],
   bootstrap: [AppComponent],
   entryComponents: [UpdateFormComponent]
 })
