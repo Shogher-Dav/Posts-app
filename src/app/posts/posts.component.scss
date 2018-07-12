@@ -1,0 +1,26 @@
+.posts {
+  width: 650px;
+}
+.posts-title {
+  display: flex;
+  flex: 0 1 auto;
+  h5 {
+    margin: 0 20px;
+  }
+}
+.posts-items {
+  display: flex;
+  flex: 0 1 auto;
+  background-color: #f2f5f8;
+  margin:5px 0;
+  padding:10px 0;
+  p {
+    margin: 0 20px;
+    cursor: pointer;
+  }
+  .actions {
+    display: flex;
+    justify-content: end;
+    color: dodgerblue;
+  }
+}

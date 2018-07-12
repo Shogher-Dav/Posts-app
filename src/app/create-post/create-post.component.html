@@ -1,0 +1,17 @@
+<div class="create-post">
+  <div><h3>New post</h3></div>
+  <form [formGroup]="postForm">
+    <div class="form-group">
+      <label for="">Title</label>
+      <input class="form-control"type="text" formControlName="title">
+    </div>
+    <div>
+      <label for="">Body</label>
+      <textarea  class="form-control" name="" id="" cols="30" rows="5" formControlName="body"></textarea>
+    </div>
+    <button class="btn btn-success save-post-btn"  (click)="createPost()" >Save Posts</button>
+  </form>
+</div>
+
+
+

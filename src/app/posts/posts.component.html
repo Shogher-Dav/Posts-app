@@ -1,0 +1,23 @@
+<div class="posts">
+  <hr>
+  <div class="posts-title">
+    <h5>Title</h5>
+    <h5>Text</h5>
+  </div>
+
+  <div *ngFor="let post of posts$ | async" class="posts-items">
+    <!--<p>{{ post.id }}</p>-->
+    <p>{{ post.title }}</p>
+    <p>{{ post.body }}</p>
+    <div class=" actions">
+      <p (click)="openModal()">Edit</p>
+      <p (click)="delete(post)">Delete</p>
+    </div>
+
+  </div>
+
+</div>
+
+<app-update-post-modal>
+  <app-update-form></app-update-form>
+</app-update-post-modal>
